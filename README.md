@@ -3,25 +3,22 @@
 ## Usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
+|name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
-|chat-group_id|integer|null: false,foreign_key: true|
 ### Association
 - has_many :posts
-- has_many :ChatGroup, through:  :posts_tags
+- has_many :ChatGroup, through:  :Users_ChatGroup
 - has_many :Users_ChatGroup
 
 
-## ChatGroupテーブル
+## ChatGroupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
-|member|string|null: false|
-|users_id|integer|null: false,foreign_key: true|
+|name|string|null: false|
 ### Association
 - has_many :posts
-- has_many :users
+- has_many :users, through:  :Users_ChatGroup
 - has_many :Users_ChatGroup
 
 
@@ -31,7 +28,7 @@
 |image|text||
 |text|text||
 ### Association
-- belong_to :users
+- belong_to :user
 - belong_to :ChatGroup
 
 
