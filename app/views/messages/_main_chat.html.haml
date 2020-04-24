@@ -1,0 +1,56 @@
+.Main
+  .Main__GroupInfo
+    .Main__GroupInfo--Left
+      %p Test
+      %ul 
+        Member : 
+        %li Name
+    .Main__GroupInfo--Right
+      =link_to "#" do
+        Edit
+      
+  .Main__Chat
+    .Main__Chat__Contents
+      .Main__Chat__Contents__Top
+        .Main__Chat__Contents__Top--Talker
+          %p 75
+        .Main__Chat__Contents__Top--Data
+          %p 2020/04/22(Wed) 20:03:58
+      .Main__Chat__Contents__Comment
+        %p おはよう！
+
+    .Main__Chat__Contents
+      .Main__Chat__Contents__Top
+        .Main__Chat__Contents__Top--Talker
+          %p 75
+        .Main__Chat__Contents__Top--Data
+          %p 2020/04/22(Wed) 20:03:58
+      .Main__Chat__Contents__Comment
+        %p おはよう！
+
+    .Main__Chat__Contents
+      .Main__Chat__Contents__Top
+        .Main__Chat__Contents__Top--Talker
+          %p 75
+        .Main__Chat__Contents__Top--Data
+          %p 2020/04/22(Wed) 20:03:58
+      .Main__Chat__Contents__Comment
+        %p おはよう！
+      
+  .Main__Form
+    .Main__Form__Contents 
+      .Main__Form__Contents__InputBox
+        -# .Main__Form__Contents__InputBox__Input
+        -#   %input{value:"type a message",type:"text"}
+        %input.Main__Form__Contents__InputBox__Input{value:"type a message",type:"text"}
+        %label.Main__Form__Contents__InputBox__Tag
+          = icon('fas', 'image')
+          %input{type: "file",id:"ImageTag"}
+
+        -# %label{class:"Main__Form__Contents__InputBox__Tag"}
+        -#     = icon("fa", "image")
+        -#     %input{type:file}
+
+      .Main__Form__Contents__Btn
+        %label.Main__Form__Contents__Btn--Send
+          %input{type: "submit",value:"Send"}

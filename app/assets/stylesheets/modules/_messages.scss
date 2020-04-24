@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper{
+  display: flex;
+}
+
+.SideBar{
+  height: 100vh;
+  width: 300px;
+  background-color: #253141;
+  color: #ffffff;
+  font-weight: bold;
+  &__UserInfo{
+    height: 100px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
+    &__UserContents{
+      width: 260px;
+      height: 20px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      line-height: 20px;
+      &__Icon{
+        width: 60px;
+        text-align: right;
+        a {
+          text-decoration: none;
+        }
+        &__List{
+          color: #ffffff;
+        }
+        &--Edit{
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  &__Groups{
+    background-color: #2f3e51;
+    height: calc(100% - 100px);
+    padding: 20px 20px 0px 20px;
+    &__Contents{
+      margin-bottom: 40px;
+      &--Title{
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &--Comment{
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+.Main{
+  height: 100vh;
+  width: calc(100vw - 300px);
+  background-color: #ffffff;
+  &__GroupInfo{
+    height: 100px;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    &--Left{
+      padding: 35px 0 0 40px;
+      p {
+        font-size: 20px;
+        color: #333333;
+        margin-bottom: 15px;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        font-size: 12px ;
+        color: #999999;
+      }
+    }
+
+    &--Right{
+        margin:28px 40px 0 0 ;
+        display: flex;
+        align-items: center;
+        width: 72px;
+        height: 40px;
+        a{
+          text-decoration: none;
+          padding: 0 20px;
+          height: 40px;
+          line-height: 40px;
+          color:#38aef0 ;
+          border: solid 1px #38aef0;
+        }
+    }
+  }
+
+  &__Chat{
+    height: calc(100% - 100px - 90px);
+    background-color: #fafafa;
+    padding: 46px 40px;
+    &__Contents{
+      margin-bottom: 46px;
+      &__Top{
+        display: flex;
+        margin-bottom: 12px;
+        &--Talker{
+          color: #333333;
+          font-size: 16px;
+        }
+        &--Data{
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      &__Comment{
+        color: #434a54;
+        font-size: 14px;
+      }
+    }
+  }
+
+
+  &__Form{
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+    &__Contents{
+      display: flex;
+      &__InputBox{
+        width: 100%;
+        background-color: #ffffff;
+        position: relative;
+        &__Input{
+          width: 100%;
+          padding: 0 10px;
+          height: 50px;
+          color: #434a54;
+          border-style: none;
+        }
+        &__Tag{
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 1.3rem;
+          cursor: pointer;
+          color: #333333;
+          #ImageTag{
+            display: none;
+          }
+        }
+      }
+      &__Btn{
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+        width: 100px;
+        input{
+          width: 100px;
+          height: 50px;
+          padding: 0 30px;
+          background-color: #38aef0;
+          color: white;
+          cursor: pointer;
+        }
+      }
+
+      
+    }
+  }
+}
+
