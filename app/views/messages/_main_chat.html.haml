@@ -40,16 +40,10 @@
   .Main__Form
     .Main__Form__Contents 
       .Main__Form__Contents__InputBox
-        -# .Main__Form__Contents__InputBox__Input
-        -#   %input{value:"type a message",type:"text"}
         %input.Main__Form__Contents__InputBox__Input{value:"type a message",type:"text"}
         %label.Main__Form__Contents__InputBox__Tag
           = icon('fas', 'image')
           %input{type: "file",id:"ImageTag"}
-
-        -# %label{class:"Main__Form__Contents__InputBox__Tag"}
-        -#     = icon("fa", "image")
-        -#     %input{type:file}
 
       .Main__Form__Contents__Btn
         %label.Main__Form__Contents__Btn--Send
