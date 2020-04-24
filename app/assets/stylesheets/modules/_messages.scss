@@ -93,7 +93,7 @@
           height: 40px;
           line-height: 40px;
           color:#38aef0 ;
-          border: solid 1px #38aef0;
+          border: solid 1px $accent-color;
         }
     }
   }
@@ -163,7 +163,7 @@
           width: 100px;
           height: 50px;
           padding: 0 30px;
-          background-color: #38aef0;
+          background-color: $accent-color;
           color: white;
           cursor: pointer;
         }
