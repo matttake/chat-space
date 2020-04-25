@@ -4,26 +4,18 @@
       .SideBar__UserInfo__UserContents__UserName
         = current_user.name
       .SideBar__UserInfo__UserContents__Icon
-        =link_to "#"do
+        =link_to new_group_path do
           =icon('fa','edit',class:"SideBar__UserInfo__UserContents__Icon__List SideBar__UserInfo__UserContents__Icon--Edit")
         =link_to edit_user_path(current_user) do
           =icon('fa','cog',class:"SideBar__UserInfo__UserContents__Icon__List")
     
   .SideBar__Groups
-    .SideBar__Groups__Contents
-      .SideBar__Groups__Contents--Title
-        %p techcamp
-      .SideBar__Groups__Contents--Comment
-        %p まだメッセージがありません
-
-    .SideBar__Groups__Contents
-      .SideBar__Groups__Contents--Title
-        %p techcamp
-      .SideBar__Groups__Contents--Comment
-        %p まだメッセージがありません
-        
-    .SideBar__Groups__Contents
-      .SideBar__Groups__Contents--Title
-        %p techcamp
-      .SideBar__Groups__Contents--Comment
-        %p まだメッセージがありません
+    - current_user.groups.each do |group|
+      .SideBar__Groups__Container
+        = link_to '#' do
+          .SideBar__Groups__Container--Title
+            = group.name
+          .SideBar__Groups__Container--Comment
+            メッセージはまだありません。
+ 
+    
