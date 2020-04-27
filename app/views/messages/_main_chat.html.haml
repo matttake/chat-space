@@ -1,50 +1,29 @@
 .Main
   .Main__GroupInfo
     .Main__GroupInfo--Left
-      %p Test
+      = @group.name
       %ul 
         Member : 
-        %li Name
+        - @group.users.each do |user|
+          %li= user.name
+          
     .Main__GroupInfo--Right
-      =link_to "#" do
+      =link_to edit_group_path(@group) do
         Edit
       
-  .Main__Chat
-    .Main__Chat__Contents
-      .Main__Chat__Contents__Top
-        .Main__Chat__Contents__Top--Talker
-          %p 75
-        .Main__Chat__Contents__Top--Data
-          %p 2020/04/22(Wed) 20:03:58
-      .Main__Chat__Contents__Comment
-        %p おはよう！
-
-    .Main__Chat__Contents
-      .Main__Chat__Contents__Top
-        .Main__Chat__Contents__Top--Talker
-          %p 75
-        .Main__Chat__Contents__Top--Data
-          %p 2020/04/22(Wed) 20:03:58
-      .Main__Chat__Contents__Comment
-        %p おはよう！
-
-    .Main__Chat__Contents
-      .Main__Chat__Contents__Top
-        .Main__Chat__Contents__Top--Talker
-          %p 75
-        .Main__Chat__Contents__Top--Data
-          %p 2020/04/22(Wed) 20:03:58
-      .Main__Chat__Contents__Comment
-        %p おはよう！
+  .Main__Chats
+    = render @messages
       
   .Main__Form
-    .Main__Form__Contents 
-      .Main__Form__Contents__InputBox
-        %input.Main__Form__Contents__InputBox__Input{value:"type a message",type:"text"}
-        %label.Main__Form__Contents__InputBox__Tag
-          = icon('fas', 'image')
-          %input{type: "file",id:"ImageTag"}
+    =form_for [@group, @message] do |f|
+      .Main__Form__InputBox
+        = f.text_field :content, class: 'Main__Form__InputBox__Input', placeholder: 'type a message'
+        .Main__Form__InputBox__Tag
+          = f.label :image, class: 'image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+      .Main__Form__Btn
+        = f.submit 'Send',class:"Btn"
 
-      .Main__Form__Contents__Btn
-        %label.Main__Form__Contents__Btn--Send
-          %input{type: "submit",value:"Send"}
+
+
