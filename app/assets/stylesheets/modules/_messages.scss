@@ -83,6 +83,9 @@
         font-size: 12px ;
         color: #999999;
       }
+      li{
+        margin-left: 0.3rem;
+      }
     }
 
     &--Right{
@@ -102,13 +105,14 @@
     }
   }
 
-  &__Chat{
+  &__Chats{
     height: calc(100% - 100px - 90px);
     background-color: #fafafa;
     padding: 46px 40px;
-    &__Contents{
+    overflow: scroll;
+    &__Message{
       margin-bottom: 46px;
-      &__Top{
+      &__Contents{
         display: flex;
         margin-bottom: 12px;
         &--Talker{
@@ -133,48 +137,51 @@
     height: 90px;
     background-color: #d2d2d2;
     padding: 20px 40px;
-    &__Contents{
+    .new_message{
       display: flex;
-      &__InputBox{
+    }
+    &__InputBox{
+      width: 100%;
+      background-color: #ffffff;
+      position: relative;
+      &__Input{
         width: 100%;
-        background-color: #ffffff;
-        position: relative;
-        &__Input{
-          width: 100%;
-          padding: 0 10px;
-          height: 50px;
-          color: #434a54;
-          border-style: none;
-        }
-        &__Tag{
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          font-size: 1.3rem;
+        padding: 0 10px;
+        height: 50px;
+        color: #434a54;
+        border-style: none;
+      }
+      &__Tag{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.3rem;
+        color: #333333;
+        .image{
           cursor: pointer;
-          color: #333333;
-          #ImageTag{
-            display: none;
-          }
+        }
+        .hidden{
+          display: none;
         }
       }
-      &__Btn{
-        display: flex;
-        align-items: center;
-        margin-left: 15px;
+    }
+    &__Btn{
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+      width: 100px;
+      .Btn{
         width: 100px;
-        input{
-          width: 100px;
-          height: 50px;
-          padding: 0 30px;
-          background-color: $accent-color;
-          color: white;
-          cursor: pointer;
-        }
+        height: 50px;
+        padding: 0 30px;
+        background-color: $accent-color;
+        color: white;
+        cursor: pointer;
       }
+    }
 
       
-    }
+    
   }
 }
 

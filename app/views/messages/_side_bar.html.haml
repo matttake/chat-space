@@ -12,10 +12,8 @@
   .SideBar__Groups
     - current_user.groups.each do |group|
       .SideBar__Groups__Container
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .SideBar__Groups__Container--Title
             = group.name
           .SideBar__Groups__Container--Comment
-            メッセージはまだありません。
- 
-    
+            =group.show_last_message    
